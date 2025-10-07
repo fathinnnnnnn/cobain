@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puskesmas Sehat Sentosa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+  <header class="bg-green-700 text-white py-6">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-3xl font-bold">Puskesmas Sehat Sentosa</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="#layanan" class="hover:underline">Layanan</a></li>
+          <li><a href="#statistik" class="hover:underline">Statistik</a></li>
+          <li><a href="#kontak" class="hover:underline">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-green-100 py-12">
+    <div class="container mx-auto text-center px-4">
+      <h2 class="text-4xl font-bold text-green-700 mb-4">Kami Peduli Kesehatan Anda</h2>
+      <p class="text-lg text-gray-700 mb-6">Memberikan pelayanan kesehatan terbaik untuk masyarakat.</p>
+      <button
+        class="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800"
+        onclick="showForm()"
+      >
+        Daftar Sekarang
+      </button>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="formSection" class="hidden py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-green-700 mb-8">Formulir Pendaftaran</h2>
+      <form onsubmit="submitForm(event)" class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 font-bold mb-2">Nama Lengkap</label>
+          <input type="text" id="name" class="w-full border-gray-300 rounded-lg p-2" required />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+          <input type="email" id="email" class="w-full border-gray-300 rounded-lg p-2" required />
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="block text-gray-700 font-bold mb-2">Nomor Telepon</label>
+          <input type="tel" id="phone" class="w-full border-gray-300 rounded-lg p-2" required />
+        </div>
+        <div class="mb-6">
+          <label for="service" class="block text-gray-700 font-bold mb-2">Layanan yang Diminati</label>
+          <select id="service" class="w-full border-gray-300 rounded-lg p-2" required>
+            <option value="" disabled selected>Pilih Layanan</option>
+            <option value="Konsultasi Dokter">Konsultasi Dokter</option>
+            <option value="Vaksinasi">Vaksinasi</option>
+            <option value="Laboratorium">Laboratorium</option>
+          </select>
+        </div>
+        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800">
+          Kirim
+        </button>
+        <button
+          type="button"
+          class="ml-4 bg-gray-400 text-white px-6 py-3 rounded-lg hover:bg-gray-500"
+          onclick="hideForm()"
+        >
+          Batal
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Layanan Section -->
+  <section id="layanan" class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-green-700 mb-8">Layanan Kami</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Konsultasi Dokter</h3>
+          <p class="text-gray-700">
+            Konsultasi dengan dokter umum dan spesialis untuk kebutuhan kesehatan Anda.
+          </p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Vaksinasi</h3>
+          <p class="text-gray-700">Layanan vaksinasi lengkap untuk anak-anak dan dewasa.</p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <h3 class="text-xl font-semibold text-green-700 mb-2">Laboratorium</h3>
+          <p class="text-gray-700">Pemeriksaan kesehatan dengan fasilitas laboratorium yang lengkap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistik Section -->
+
+  <!-- Kontak Section -->
+
+
+  <!-- Footer -->
+  <footer class="bg-green-700 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Puskesmas Sehat Sentosa. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const formSection = document.getElementById('formSection');
+
+    function showForm() {
+      formSection.classList.remove('hidden');
+    }
+
+    function hideForm() {
+      formSection.classList.add('hidden');
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      alert('Formulir berhasil dikirim!');
+      hideForm();
+    }
+  </script>
+</body>
+</html>
